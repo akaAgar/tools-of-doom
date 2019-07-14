@@ -23,7 +23,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace DoomPacker
+namespace WadPacker
 {
     public sealed class WadFile : IDisposable
     {

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1A9EA72E-E2D4-4C10-82AE-14A1C0C90889}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DoomPacker</RootNamespace>
-    <AssemblyName>DoomPacker</AssemblyName>
+    <RootNamespace>WadPacker</RootNamespace>
+    <AssemblyName>WadPacker</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

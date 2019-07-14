@@ -22,7 +22,7 @@ using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
-namespace DoomPacker
+namespace WadPacker
 {
     /// <summary>
     /// A lump in a Doom wad file.

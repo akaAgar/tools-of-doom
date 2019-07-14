@@ -24,7 +24,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
-namespace DoomPacker
+namespace WadPacker
 {
     /// <summary>
     /// Main class for the application. Basically just an ugly static classes adding all files from the application directory
