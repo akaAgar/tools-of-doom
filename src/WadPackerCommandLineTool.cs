@@ -48,6 +48,10 @@ namespace WadPacker
                 string appDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
                 AddFilesAsLumps(wad, appDirectory, 0);
+                // Add sprites, patch and flats markers
+                wad.AddLump("S_START", new byte[0]); wad.AddLump("S_END", new byte[0]);
+                wad.AddLump("P_START", new byte[0]); wad.AddLump("P_END", new byte[0]);
+                wad.AddLump("F_START", new byte[0]); wad.AddLump("F_END", new byte[0]);
                 Console.WriteLine();
                 wad.SaveToFile(appDirectory + "\\" + Path.GetFileName(appDirectory) + ".wad");
             }
