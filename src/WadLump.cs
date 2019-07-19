@@ -37,7 +37,7 @@ namespace WadPacker
         /// <summary>
         /// Regex pattern used to remove invalid characters from the lump name.
         /// </summary>
-        private const string LUMP_REGEX_PATTERN = "[^A-Z0-9]";
+        private const string LUMP_REGEX_PATTERN = "[^A-Z0-9_]";
 
         /// <summary>
         /// Lump name.
