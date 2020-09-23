@@ -1,39 +1,33 @@
 ﻿/*
 ==========================================================================
-This file is part of WadPacker, a command-line wad packing tool
-by @akaAgar (https://github.com/akaAgar/WadPacker)
+This file is part of Tools of Doom, a library providing a collection of
+classes to load/edit/save Doom maps and wad archives, created by @akaAgar
+(https://github.com/akaAgar/tools-of-doom).
 
-WadPacker is free software: you can redistribute it and/or modify
+Tools of Doom is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-WadPacker is distributed in the hope that it will be useful,
+Tools of Doom is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with WadPacker. If not, see https://www.gnu.org/licenses/
+along with Tools of Doom. If not, see https://www.gnu.org/licenses/
 ==========================================================================
 */
 
-using System;
-using System.Globalization;
 using System.Text.RegularExpressions;
 
-namespace WadPacker
+namespace ToolsOfDoom.Wad
 {
     /// <summary>
     /// A lump in a Doom wad file.
     /// </summary>
     public struct WadLump
     {
-        /// <summary>
-        /// Max length of the lump name entry.
-        /// </summary>
-        private const int MAX_LUMP_NAME_LENGTH = 8;
-
         /// <summary>
         /// Regex pattern used to remove invalid characters from the lump name.
         /// </summary>
@@ -42,12 +36,12 @@ namespace WadPacker
         /// <summary>
         /// Lump name.
         /// </summary>
-        public readonly string LumpName;
+        public string Name { get; }
 
         /// <summary>
         /// Lump content, as an array of bytes.
         /// </summary>
-        public readonly byte[] Bytes;
+        public byte[] Bytes { get; }
 
         /// <summary>
         /// Constructor.
@@ -58,10 +52,9 @@ namespace WadPacker
         {
             Bytes = bytes ?? new byte[0]; // Make sure bytes is not null
             if (string.IsNullOrEmpty(name)) name = "NULL";
-            LumpName = Regex.Replace(name.ToUpperInvariant(), LUMP_REGEX_PATTERN, "");
-            if (LumpName.Length > MAX_LUMP_NAME_LENGTH) LumpName = LumpName.Substring(0, MAX_LUMP_NAME_LENGTH);
-
-            Console.WriteLine($"Added lump {LumpName} ({Bytes.Length.ToString("N0", NumberFormatInfo.InvariantInfo)} bytes).");
+            Name = Regex.Replace(name.ToUpperInvariant(), LUMP_REGEX_PATTERN, "");
+            if (Name.Length > WadFile.MAX_LUMP_NAME_LENGTH)
+                Name = Name.Substring(0, WadFile.MAX_LUMP_NAME_LENGTH);
         }
     }
 }

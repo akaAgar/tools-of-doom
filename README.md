@@ -1,5 +1,18 @@
-# WadPacker
+# Tools of Doom
 
-A very simple command-line tool which packs all files in the application directory (and all subdirectories) into a Doom .wad file.
+A C#  (.Net Framework 4.5/Mono) library providing a collection of classes to load/edit/save Doom maps and wad archives.
 
-Subdirectories named ExMx or MAPxx are added as maps (so a zero-length entry with the name of the map is added before the lumps created from the files).
+Also includes two command-line projects (WadIndexer and WadPacker) to showcase what the library can do.
+
+To learn more about Doom maps and archives, and better understand this source code, you should read the [Unofficial Doom Specs](http://www.gamers.org/dhs/helpdocs/dmsp1666.html) by Matthew S. Fell.
+
+## Tools of Doom
+A .Net library with classes to load/edit/save Doom.
+
+## WadIndexer
+
+Outputs a text file with the same name 
+
+## WadPacker
+
+A very simple command-line tool which packs all files passed as parameter into **PackedFiles.wad**.
