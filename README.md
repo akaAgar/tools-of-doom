@@ -7,7 +7,7 @@ Also includes two command-line projects (WadIndexer and WadPacker) to showcase w
 To learn more about Doom maps and archives, and better understand this source code, you should read the [Unofficial Doom Specs](http://www.gamers.org/dhs/helpdocs/dmsp1666.html) by Matthew S. Fell.
 
 ## Tools of Doom
-A .Net library with classes to load/edit/save Doom.
+A .Net library with classes to load/edit/save Doom maps and wad archives.
 
 ## WadIndexer
 
